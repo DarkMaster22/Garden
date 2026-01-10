@@ -28,6 +28,24 @@
             color: rgb(161, 161, 161);
         }
 
+        .img-btn {
+            background-color: rgb(219, 219, 219);
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 8px;
+
+            margin-left: 64px;
+        }
+        .img-btn:hover {
+            background-color: rgb(158, 158, 158);
+        }
+
+        .img-btn img {
+            width: 64px;
+            height: 64px;
+        }
+
         .logo
         {
             width: 64px;
@@ -35,6 +53,7 @@
 
             display: flex;
         }
+
     </style>
 
     <link rel="icon" href="herb fill.png" type="image/png">
@@ -43,9 +62,30 @@
     <img class="logo" src="DarkMaster Logo.png">
     <img src="herb fill.png">
     <h1>Garden Engine</h1>
+    
+    <button class="img-btn" onclick="Windows10()">
+        <img src="windows-10-icon.png" alt="button">
+    </button>
+    <button class="img-btn" onclick="Linux()">
+        <img src="linux.png" alt="button">
+    </button>
+
     <h3>..قريبا سيتوفر اصدار تجريبي</h3>
+    
+    <br><br>
 
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/HunrqLjC6Vk?si=PdWqubUlrfgvkYJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <script>
+        function Windows10()
+        {
+            alert("قريبا جدا سيتوفر على نضام Windows 10/11")
+        }
+        function Linux()
+        {
+            alert("قريبا سيتوفر على نضام linux")
+        }
+    </script>
+
+    <h2>الاعلان</h2>
+    <iframe class="video" width="800" height="600" src="https://www.youtube.com/embed/HunrqLjC6Vk?si=PdWqubUlrfgvkYJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
-
 </html>
