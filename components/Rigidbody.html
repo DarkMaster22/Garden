@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Rigidbody</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html" class="active">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Rigidbody Component</h1>
+
+        <p>Physics body in world with any shape Collider</p>
+
+        <h2>BodyType</h2>
+        <p>type physical body in world</p>
+
+        <h2>enum</h2>
+        <table>
+            <tr>
+                <td>Static</td>
+                <td>Kinematic</td> 
+                <td>Dynamic</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+BodyType.Dynamic
+        </code></pre>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>bodyType</td>
+                <td>BodyType</td>
+                <td>body type if static never move or dynamic mover physical</td>
+            </tr>
+            <tr>
+                <td>fixidRotation</td>
+                <td>bool</td>
+                <td>active rotation physical</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>LinearImpulse(Vec2 impulse)</td>
+                <td>add impulse from position and wake</td>
+            </tr>
+            <tr>
+                <td>ApplyForce(Vec2 force)</td>
+                <td>add force to center and wake</td>
+            </tr>
+            <tr>
+                <td>ApplyLinearImpulse(Vec2 impulse)</td>
+                <td>add impulse to center and wake</td>
+            </tr>
+            <tr>
+                <td>ApplyTorque(float torque)</td>
+                <td>give torque wake</td>
+            </tr>
+            <tr>
+                <td>AngularImpulse(float impulse)</td>
+                <td>angular or rotate by impulse wake</td>
+            </tr>
+            <tr>
+                <td>SetLinearVelocity(Vec2 velocity)</td>
+                <td>set velocity to mover physical</td>
+            </tr>
+            <tr>
+                <td>GetLinearVelocity()</td>
+                <td>return body velocity</td>
+            </tr>
+            <tr>
+                <td>SetAngularVelocity(float angularVelocity)</td>
+                <td>set angular velocity to angular or rotate physical</td>
+            </tr>
+            <tr>
+                <td>GetAngularVelocity()</td>
+                <td>return angular velocity</td>
+            </tr>
+            <tr>
+                <td>SetGravityScale(float gravity)</td>
+                <td>set gravity local object</td>
+            </tr>
+            <tr>
+                <td>SetTransform(Vec2 position, float angle)</td>
+                <td>move and rotate object not physical</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new Rigidbody component at . bodyType, fixidRotation.
+local rb = entity:AddComponent(Rigidbody(BodyType.Static, true))
+
+-- access the Rigidbody properties
+rb.bodyType = BodyType.Dynamic
+rb.SetLinearVelocity(Vec2(5, 0))
+
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Rigidbody Component</h1>
+
+        <p>اي كولايدر لن يتفاعل من دونه. يتحكم في transform الكائن لجعل جسم فيزيائي</p>
+
+        <h2>BodyType</h2>
+        <p>نوع جسم الفيزيائي</p>
+
+        <h2>enum</h2>
+        <table>
+            <tr>
+                <td>Static</td>
+                <td>Kinematic</td> 
+                <td>Dynamic</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+BodyType.Dynamic
+        </code></pre>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>bodyType</td>
+                <td>BodyType</td>
+                <td>تحديد نوع جسم الفيزيائي</td>
+            </tr>
+            <tr>
+                <td>fixidRotation</td>
+                <td>bool</td>
+                <td>تفعيلة لن يدور فيزيائي</td>
+            </tr>
+        </table>
+
+        <h2>الدوأل</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>LinearImpulse(Vec2 impulse)</td>
+                <td>يدفع الجسم بقوة معينه من موقع الكائن</td>
+            </tr>
+            <tr>
+                <td>ApplyForce(Vec2 force)</td>
+                <td>اضافة قوة للجسم لتحريكة من مركزة</td>
+            </tr>
+            <tr>
+                <td>ApplyLinearImpulse(Vec2 impulse)</td>
+                <td>يدفع الجسم بقوة معينه من مركز الكائن بدل موقعه</td>
+            </tr>
+            <tr>
+                <td>ApplyTorque(float torque)</td>
+                <td>اضافة عزم دوران</td>
+            </tr>
+            <tr>
+                <td>AngularImpulse(float impulse)</td>
+                <td>دفع زاوية للجسم بقوة معينه</td>
+            </tr>
+            <tr>
+                <td>SetLinearVelocity(Vec2 velocity)</td>
+                <td>تعيين تسارع الجسم</td>
+            </tr>
+            <tr>
+                <td>GetLinearVelocity()</td>
+                <td>يعود بي قيمة تسارع الجسم</td>
+            </tr>
+            <tr>
+                <td>SetAngularVelocity(float angularVelocity)</td>
+                <td>تعيين سرعة زاوية</td>
+            </tr>
+            <tr>
+                <td>GetAngularVelocity()</td>
+                <td>يعود بي قيمة سرعة زاوية</td>
+            </tr>
+            <tr>
+                <td>SetGravityScale(float gravity)</td>
+                <td>تعيين قوة سحب الجاذبية للجسم فقد</td>
+            </tr>
+            <tr>
+                <td>SetTransform(Vec2 position, float angle)</td>
+                <td>تعيين موقع و دوران الكائن من transform خارج فيزاته</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد Rigidbody. BodyType, fixidRotation.
+local rb = entity:AddComponent(Rigidbody(BodyType.Static, true))
+
+-- access the Rigidbody properties
+rb.bodyType = BodyType.Dynamic
+rb.SetLinearVelocity(Vec2(5, 0))
+
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

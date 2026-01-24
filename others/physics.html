@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Physics</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Other</h2>
+        <a href="physics.html" class="active">Physics</a>
+        <a href="other.html">Other</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Physics</h1>
+
+        <p>Physics for make real world gravity rigidbody and need Mathmatic to complate</p>
+
+        <h2>Functions</h2>
+        
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>AABB(Vec2 posA, Vec2 scaleA, Vec2 posB, Vec2 scaleB)</td>
+                <td>active if collision a, b by box shape</td>
+            </tr>
+            <tr>
+                <td>CircleVsCircle(Vec2 posA, float radiusA, Vec2 posB, float radiusB)</td>
+                <td>active if collision a, b by circles shape</td>
+            </tr>
+            <tr>
+                <td>PolygonVsPolygon(Vec2[] verticesA, Vec2[] verticesB)</td>
+                <td>active if collision a, b by vertices for polygon shape</td>
+            </tr>
+            <tr>
+                <td>CircleVsPolygon(Vec2[] vertices, Vec2 circlePosition, float circleRadius)</td>
+                <td>active if collision a, b by vertices for polygon shape and with cirlce shape</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+if AABB(Vec2(0, 0), Vec2(32, 32), Vec2(30, 30), Vec2(16, 16)) then
+    DebugLog("Is boxs collision!")
+end
+
+if CircleVsCircle(Vec2(50, 50), 16, Vec2(100, 100), 32) then
+    DebugLog("Is circles collision!")
+end
+
+local vertices = {}--make array from Vec2[]
+
+table.insert(vertices, Vec2(0, 0))
+table.insert(vertices, Vec2(50, 50))
+
+if CircleVsPolygon(vertices, Vec2(50, 50), 16) then
+    DebugLog("Is circle with polygon collision!")
+end
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Physics</h1>
+
+        <p>الفيزياء في المحرك لتكوين التصادمات واجسام حركه فيزيائيه كما في العالم الحقيقي ولا يكمل الامر دون الرياضيات</p>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>AABB(Vec2 posA, Vec2 scaleA, Vec2 posB, Vec2 scaleB)</td>
+                <td>كشف اذا كان هناك تصادم ما بين المربعين a و b</td>
+            </tr>
+            <tr>
+                <td>CircleVsCircle(Vec2 posA, float radiusA, Vec2 posB, float radiusB)</td>
+                <td>كشف التصادم ما بين دائرتين</td>
+            </tr>
+            <tr>
+                <td>PolygonVsPolygon(Vec2[] verticesA, Vec2[] verticesB)</td>
+                <td>كشف التصادم ما بين شكلين مختلفين</td>
+            </tr>
+            <tr>
+                <td>CircleVsPolygon(Vec2[] vertices, Vec2 circlePosition, float circleRadius)</td>
+                <td>كشف التصادم الدائره بي شكل مختلف</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+if AABB(Vec2(0, 0), Vec2(32, 32), Vec2(30, 30), Vec2(16, 16)) then
+    DebugLog("Is boxs collision!")
+end
+
+if CircleVsCircle(Vec2(50, 50), 16, Vec2(100, 100), 32) then
+    DebugLog("Is circles collision!")
+end
+
+local vertices = {}-- الانشاء مصفوفه من Vec2[]
+
+table.insert(vertices, Vec2(0, 0))
+table.insert(vertices, Vec2(50, 50))
+
+if CircleVsPolygon(vertices, Vec2(50, 50), 16) then
+    DebugLog("Is circle with polygon collision!")
+end
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Entity</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>ECS</h2>
+        <a href="entity.html" class="active">Entity</a>
+        <a href="registry.html">Registry</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Entity</h1>
+
+        <p>entity have components in the world</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>entity name</td>
+            </tr>
+            <tr>
+                <td>group</td>
+                <td>string</td>
+                <td>join entity on group have entities</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>int32_t</td>
+                <td>return entity id</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>AddComponent(Component())</td>
+                <td>add component for entity</td>
+            </tr>
+            <tr>
+                <td>HasComponent(Component())</td>
+                <td>check if entity haved this component</td>
+            </tr>
+            <tr>
+                <td>GetComponent(Component)</td>
+                <td>return component from entity</td>
+            </tr>
+            <tr>
+                <td>RemoveComponent(Component)</td>
+                <td>remove or destroy component in this entity</td>
+            </tr>
+            <tr>
+                <td>Destroy()</td>
+                <td>destroy the entity</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- access the Entity properties
+DebugLog("entity name : ", entity:name())
+
+local sprite = entity:AddComponent(Sprite("none", 0, false, Color(255, 255, 255, 255)--white))
+
+local transform = entity:GetComponent(Transform)
+
+entity:Destroy()
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Entity - الكائن</h1>
+
+        <p>كائن له اسم ويحمل مكونات والمحرك يتفاعل مع جميع الكائنات بمكوناتها</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>name</td>
+                <td>string</td>
+                <td>اسم الكائن يفضل دائما لكل كائن اسم مختلف</td>
+            </tr>
+            <tr>
+                <td>group</td>
+                <td>string</td>
+                <td>اسم قروب يجمع الكائنات تحمل اسم هذا القروب</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>int32_t</td>
+                <td>لكل كائن id خاص به</td>
+            </tr>
+        </table>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>AddComponent(Component())</td>
+                <td>اضافة مكون معين ليحمله الكائن</td>
+            </tr>
+            <tr>
+                <td>HasComponent(Component())</td>
+                <td>يتاكد اذا كان هذا الكائن يحمل مكون معين ام لا</td>
+            </tr>
+            <tr>
+                <td>GetComponent(Component)</td>
+                <td>بجلب المكون الذي يحمله الكائن</td>
+            </tr>
+            <tr>
+                <td>RemoveComponent(Component)</td>
+                <td>يحذف المكون من الكائن بشكل نهائي</td>
+            </tr>
+            <tr>
+                <td>Destroy()</td>
+                <td>يحذف الكائن نهائي</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- access the Entity properties
+DebugLog("entity name : ", entity:name())
+
+local sprite = entity:AddComponent(Sprite("none", 0, false, Color(255, 255, 255, 255)--white))
+
+local transform = entity:GetComponent(Transform)
+
+entity:Destroy()
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

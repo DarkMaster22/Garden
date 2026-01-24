@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - GamepadAxis</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+    
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <a href="../doc.html">About</a>
+            <h2>Inputs</h2>
+            <a href="inputs.html">Inputs</a>
+            <a href="keys.html">Keys</a>
+            <a href="mousebutton.html">MouseButton</a>
+            <a href="gamepadbutton.html">GamepadButton</a>
+            <a href="gamepadaxis.html" class="active">GamepadAxis</a>
+        </aside>
+
+        <main class="content">
+        <h1>GamepadAxis</h1>
+        <p>use for Type Axis from Gamepad</p>
+
+        <h2>enum</h2>
+        <table>
+            <tr>
+                <td>AXIS_LEFT_X</td>
+                <td>AXIS_LEFT_Y</td>
+                <td>AXIS_RIGHT_X</td>
+                <td>AXIS_RIGHT_Y</td>
+                <td>AXIS_LEFT_TRIGGER</td>
+                <td>AXIS_RIGHT_TRIGGER</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+        <pre><code>
+--                          enum GamepadAxis
+if Inputs.GetGamepadAxis(0, GamepadAxis.AXIS_LEFT_X) then
+    DebugLog("Axis (AXIS_LEFT_X) : 1.0")
+end
+        </code></pre>
+    </main>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

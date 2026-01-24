@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - Doc</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="herb fill.png" type="image/png">
+</head>
+<body>
+    
+    <header class="topbar">
+    <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <a href="doc.html" class="active">About</a>
+            <h2>ECS</h2>
+            <a href="ecs/entity.html">Entity</a>
+            <a href="ecs/registry.html">Registry</a>
+
+            <h2>Inputs</h2>
+            <a href="inputs/inputs.html">Inputs</a>
+            <a href="inputs/keys.html">Keys</a>
+            <a href="inputs/mousebutton.html">MouseButton</a>
+            <a href="inputs/gamepadbutton.html">GamepadButton</a>
+            <a href="inputs/gamepadaxis.html">GamepadAxis</a>
+
+            <h2>Math</h2>
+            <a href="math/vec2.html">Vec2</a>
+            <a href="math/vec3.html">Vec3</a>
+            <a href="math/vec4.html">Vec4</a>
+            <a href="math/math.html">Math</a>
+
+            <h2>Other</h2>
+            <a href="others/physics.html">Physics</a>
+            <a href="others/other.html">Other</a>
+
+            <h2>Components</h2>
+            <a href="components/transform.html">Transform</a>
+            <a href="components/sprite.html">Sprite</a>
+            <a href="components/spritesheet.html">Spritesheet</a>
+            <a href="components/BoxCollider.html">BoxCollider</a>
+            <a href="components/CircleCollider.html">CircleCollider</a>
+            <a href="components/Rigidbody.html">Rigidbody</a>
+            <a href="components/TextWorld.html">TextWorld</a>
+            <a href="components/CameraComponent.html">CameraComponent</a>
+            <a href="components/SoundSource.html">SoundSource</a>
+            <a href="components/Tilemap.html">Tilemap</a>
+            <a href="components/TextUI.html">TextUI</a>
+            <a href="components/ImageUI.html">ImageUI</a>
+            <a href="components/ButtonUI.html">ButtonUI</a>
+        </aside>
+
+        <main id="contentEN" class="content" style="display: none;">
+            <h1>About</h1>
+        </main>
+
+        <main id="contentAR" class="content" style="display: block;">
+            <h1>حول</h1>
+
+            <h2>محرك قاردن</h2>
+            <p>طور المحرك قاردن مستقل عن المحركات الغربية من شاب عربي اردني حمزة نوافلة. لفئة المطورين العرب الجدد في مجال صناعة العاب الفيديو لتحفيزهم على العمل
+                وتسهيل الامر عليهم, كتب حوالي 15الف سطر كود فعلي
+            </p>
+
+            <h2>برمجة بلغة لوا</h2>
+            <p>استخدم لغة لوا لتطوير لعبتك اسهل وابسط الغات</p>
+        </main>
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
