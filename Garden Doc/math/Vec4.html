@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Vec4</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Math</h2>
+        <a href="vec2.html">Vec2</a>
+        <a href="vec3.html">Vec3</a>
+        <a href="vec4.html" class="active">Vec4</a>
+        <a href="math.html">Math</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Vec4</h1>
+
+        <p>Vec4 have 4 bat type float x and y and z and w for make point in space have length and direction just for more advance</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>float</td>
+                <td>every plus go right and every sub go left</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>float</td>
+                <td>every plus go down and every sub go up</td>
+            </tr>
+            <tr>
+                <td>z</td>
+                <td>float</td>
+                <td>every plus go depth in camera and every sub go big range camera</td>
+            </tr>
+            <tr>
+                <td>w</td>
+                <td>float</td>
+                <td>need for matrices and more advance</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>length()</td>
+                <td>return direction length</td>
+            </tr>
+            <tr>
+                <td>lengthSq()</td>
+                <td>return sqrt direction length</td>
+            </tr>
+            <tr>
+                <td>dot(Vec4)</td>
+                <td>return float a.b</td>
+            </tr>
+            <tr>
+                <td>Normalize()</td>
+                <td>return value between 0-1 float</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+local a = Vec3(50, 30, 80, 1)
+local b = Vec3(32, 16, 8, 1)
+
+a:Normalize()
+
+local dot = a:dot(b)
+
+local distance = a - b
+local length = distance:length()
+
+local between = b * 4
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Vec4</h1>
+
+        <p>المتجه هو عباره عن نقطة في الفضاء له x-y-z-w يعبرعن موقعة ولكن له طول واتجاه ولكن غالبا احتياجه للامور اكثر تقدما مثل تحكم بينات عملاقة</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>float</td>
+                <td>كل ما زاد بشكل موجب ذهب يمين اكثر وكل ما اصبح اقل من الصفر واصبح سلبي اكثر ذهب لليسار (-x____________0___________x+)</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>float</td>
+                <td>كل ما زاد بشكل موجب ذهب للاسفل وكل ما اصبح اقل من الصفر واصبح اقل سلبي ذهب للاعلى</td>
+            </tr>
+            <tr>
+                <td>z</td>
+                <td>float</td>
+                <td>كل ما زاد بشكل موجب اصبح بعيد وكل ما اصبح اقل من الصفر واصبح اقل سلبي تقرب للكاميرا</td>
+            </tr>
+            <tr>
+                <td>w</td>
+                <td>float</td>
+                <td>لتوكين اجزاء اضافيه غالبا لي امور اكثر تقدما</td>
+            </tr>
+        </table>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>length()</td>
+                <td>يعيد قيمه طول اتجاه المتجه</td>
+            </tr>
+            <tr>
+                <td>lengthSq()</td>
+                <td>يعيد قيمة جذر التكعيبي لطول اتجاه المتجه</td>
+            </tr>
+            <tr>
+                <td>dot(Vec4)</td>
+                <td>يعيد قيمة اسقاط متجه اخر على المتجه</td>
+            </tr>
+            <tr>
+                <td>Normalize()</td>
+                <td>يعيد قيمة الاتجاه ناعم ما بين الصفر والواحد 0-1</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+local a = Vec4(50, 30, 80, 1)
+local b = Vec4(32, 16, 8, 1)
+
+a:Normalize()
+
+local dot = a:dot(b)
+
+local distance = a - b
+local length = distance:length()
+
+local between = b * 4-- يتيح ضرب اتجاهين بي بعضم البعض وضرب اتجاه برقم
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

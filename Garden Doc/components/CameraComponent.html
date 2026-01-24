@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - CameraComponent</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html" class="active">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>CameraComponent</h1>
+
+        <p>controls camera for view the world</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>scale</td>
+                <td>float</td>
+                <td>set zoom or range view camera</td>
+            </tr>
+            <tr>
+                <td>landscape</td>
+                <td>bool</td>
+                <td>change view camera landscape or portable</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new CameraComponent component at.
+local camera = entity:AddComponent(CameraComponent())
+
+-- access the CameraComponent properties
+camera.landscape = false
+camera.scale = 0.5
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>CameraComponent</h1>
+
+        <p>لتحكم في الكاميرا وعرض العالم</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>scale</td>
+                <td>float</td>
+                <td>حجم تكبير او تصغير رؤية الكاميرا</td>
+            </tr>
+            <tr>
+                <td>landscape</td>
+                <td>bool</td>
+                <td>تعيين طريقة عرض الكاميرا لي landscape او portable</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد CameraComponent.
+local camera = entity:AddComponent(CameraComponent())
+
+-- access the CameraComponent properties
+camera.landscape = false
+camera.scale = 0.5
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

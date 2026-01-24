@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - GamepadButton</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+    
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <a href="../doc.html">About</a>
+            <h2>Inputs</h2>
+            <a href="inputs.html">Inputs</a>
+            <a href="keys.html">Keys</a>
+            <a href="mousebutton.html">MouseButton</a>
+            <a href="gamepadbutton.html" class="active">GamepadButton</a>
+            <a href="gamepadaxis.html">GamepadAxis</a>
+        </aside>
+
+        <main class="content">
+        <h1>GamepadButton</h1>
+        <p>use for Type button from Gamepad</p>
+
+        <h2>enum</h2>
+        <table>
+            <tr>
+                <td>BUTTON_A</td>
+                <td>BUTTON_B</td>
+                <td>BUTTON_X</td>
+                <td>BUTTON_Y</td>
+                <td>BUTTON_LEFT_BUMPER</td>
+                <td>BUTTON_RIGHT_BUMPER</td>
+                <td>BUTTON_LEFT_THUMB</td>
+                <td>BUTTON_RIGHT_THUMB</td>
+            </tr>
+            <tr>
+                <td>BUTTON_BACK</td>
+                <td>BUTTON_START</td>
+                <td>BUTTON_GUIDE</td>
+                <td>BUTTON_DPAD_UP</td>
+                <td>BUTTON_DPAD_RIGHT</td>
+                <td>BUTTON_DPAD_DOWN</td>
+                <td>BUTTON_DPAD_LEFT</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+        <pre><code>
+--                                 enum GamepadButton
+if Inputs.GetGamepadButtonDown(0, GamepadButton.BUTTON_A) then
+    DebugLog("GamepadButton (BUTTON_A) is pressed!")
+end
+        </code></pre>
+    </main>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

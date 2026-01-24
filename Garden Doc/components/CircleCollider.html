@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - CircleCollider</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html" class="active">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>CircleCollider Component</h1>
+
+        <p>Physics body in world on shape Circle Collider</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Vec2</td>
+                <td>offset shape collider in world</td>
+            </tr>
+            <tr>
+                <td>radius</td>
+                <td>float</td>
+                <td>radius shape collider in world</td>
+            </tr>
+            <tr>
+                <td>isTrigger</td>
+                <td>bool</td>
+                <td>check in shape collider if collision with other shape collider, and not manifold</td>
+            </tr>
+            <tr>
+                <td>density</td>
+                <td>float</td>
+                <td>mass Physics body in world by gram wighet</td>
+            </tr>
+            <tr>
+                <td>friction</td>
+                <td>float</td>
+                <td>amount friction between two body</td>
+            </tr>
+            <tr>
+                <td>restitution</td>
+                <td>float</td>
+                <td>how force is the reverse rebound</td>
+            </tr>
+            <tr>
+                <td>restitutionThreshold</td>
+                <td>float</td>
+                <td>the recoil force itself</td>
+            </tr>
+            <tr>
+                <td>OnTriggerEnter</td>
+                <td>function</td>
+                <td>when another collider begins to enter itself so calls the function</td>
+            </tr>
+            <tr>
+                <td>OnTriggerExit</td>
+                <td>function</td>
+                <td>when another collider to exit from itself so calls the function</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new CircleCollider component at . center, radius, isTrigger.
+local collider = entity:AddComponent(CircleCollider(vec2(16, 16), 16, false))
+
+-- access the CircleCollider properties
+collider.center = vec2(16, 32)
+collider.radius = 8
+collider.isTrigger = true
+collider.density = 1.0
+
+collider.OnTriggerEnter = function(other)
+    DebugLog("is enter collider : ", other:name())
+end
+
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>CircleCollider Component</h1>
+
+        <p>جسم فيزيائي يمثل شكلة ليتصادم مع اجسام اي يكن شكله</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>center</td>
+                <td>Vec2</td>
+                <td>موقع الكولايدر في العالم</td>
+            </tr>
+            <tr>
+                <td>radius</td>
+                <td>Vec2</td>
+                <td>مدى قطر الدائرة</td>
+            </tr>
+            <tr>
+                <td>isTrigger</td>
+                <td>bool</td>
+                <td>عند تفعيله يصبح لا تاثر فزيائي فقد لكشف اذا كان اي كائن دخل او خرج من ملامسته</td>
+            </tr>
+            <tr>
+                <td>density</td>
+                <td>float</td>
+                <td>يمثل كثافة او وزن الجسم</td>
+            </tr>
+            <tr>
+                <td>friction</td>
+                <td>float</td>
+                <td>مدى قوة احتكاك جسم اخر</td>
+            </tr>
+            <tr>
+                <td>restitution</td>
+                <td>float</td>
+                <td>مدى الارتداد بعد تصادم مع كائن اخر وانعكاس القوى</td>
+            </tr>
+            <tr>
+                <td>restitutionThreshold</td>
+                <td>float</td>
+                <td>مدى قوة الانعكاس الصادر من الارتداد نفسه</td>
+            </tr>
+            <tr>
+                <td>OnTriggerEnter</td>
+                <td>function</td>
+                <td>عند بداية دخول جسم اخر يستدعي الدالة</td>
+            </tr>
+            <tr>
+                <td>OnTriggerExit</td>
+                <td>function</td>
+                <td>عند خروج الجسم الاخر بعد دخوله يستدعي الدالة</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون CircleCollider. center, radius, isTrigger
+local collider = entity:AddComponent(CircleCollider(vec2(16, 16), 16, false))
+
+-- access the CircleCollider properties
+collider.center = vec2(16, 32)
+collider.radius = 8
+collider.isTrigger = true
+collider.density = 1.0
+
+collider.OnTriggerEnter = function(other)
+    DebugLog("is enter collider : ", other:name())
+end
+
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Math</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Math</h2>
+        <a href="vec2.html">Vec2</a>
+        <a href="vec3.html">Vec3</a>
+        <a href="vec4.html">Vec4</a>
+        <a href="math.html" class="active">Math</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Math</h1>
+
+        <p>mathmatic need culcalates for Vec2 Vec3 Cos Sin Sqrt Distance and more to make a best game</p>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Distance(Vec2 a, Vec2 b)</td>
+                <td>return value distance between a and b</td>
+            </tr>
+            <tr>
+                <td>Distance(Vec3 a, Vec3 b)</td>
+                <td>return value distance between a and b</td>
+            </tr>
+            <tr>
+                <td>Distance(Vec4 a, Vec4 b)</td>
+                <td>return value distance between a and b</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec2 a, Vec2 b, float time)</td>
+                <td>return value for move a go to b on smooth</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec3 a, Vec3 b, float time)</td>
+                <td>return value for move a go to b on smooth</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec4 a, Vec4 b, float time)</td>
+                <td>return value for move a go to b on smooth</td>
+            </tr>
+            <tr>
+                <td>Lerp(float a, float b, float time)</td>
+                <td>return value add a to b on smooth</td>
+            </tr>
+            <tr>
+                <td>Clamp(float value, float min, float max)</td>
+                <td>return value clamp between on little min and mush max</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+local a = Vec2(50, 30)
+local b = Vec2(32, 16)
+
+a.x = Lerp(a.x, b.x, 3)
+
+if Distance(a, b) < 16 then
+    a = MoveTo(a, b, 5 * DeltaTime())
+end
+
+a.x = Clamp(a.x, 0, 10)
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Math</h1>
+
+        <p>كلاس الرياضيات يضم جميع عمليات الحسابية التي تحتاجه لصناعة الالعاب ولا يكمن من دونه</p>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>Distance(Vec2 a, Vec2 b)</td>
+                <td>يعيد قيمة المسافة ما بين a و b</td>
+            </tr>
+            <tr>
+                <td>Distance(Vec3 a, Vec3 b)</td>
+                <td>يعيد قيمة المسافة ما بين a و b</td>
+            </tr>
+            <tr>
+                <td>Distance(Vec4 a, Vec4 b)</td>
+                <td>يعيد قيمة المسافة ما بين a و b</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec2 a, Vec2 b, float time)</td>
+                <td>كل مره يعيد قيمة تتبع a الى b على حسب الوقت او السرعه</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec3 a, Vec3 b, float time)</td>
+                <td>كل مره يعيد قيمة تتبع a الى b على حسب الوقت او السرعه</td>
+            </tr>
+            <tr>
+                <td>MoveTo(Vec4 a, Vec4 b, float time)</td>
+                <td>كل مره يعيد قيمة تتبع a الى b على حسب الوقت او السرعه</td>
+            </tr>
+            <tr>
+                <td>Lerp(float a, float b, float time)</td>
+                <td>كل مره يعيد قيمة تتبع a الى b على حسب الوقت او السرعه</td>
+            </tr>
+            <tr>
+                <td>Clamp(float value, float min, float max)</td>
+                <td>يعيد قيمة محدوده ما بين كا اقل min واقصى max</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+local a = Vec2(50, 30)
+local b = Vec2(32, 16)
+
+a.x = Lerp(a.x, b.x, 3)
+
+if Distance(a, b) < 16 then
+    a = MoveTo(a, b, 5 * DeltaTime())
+end
+
+a.x = Clamp(a.x, 0, 10)
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

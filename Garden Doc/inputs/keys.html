@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - Keys</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+    
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <a href="../doc.html">About</a>
+            <h2>Inputs</h2>
+            <a href="inputs.html">Inputs</a>
+            <a href="keys.html" class="active">Keys</a>
+            <a href="mousebutton.html">MouseButton</a>
+            <a href="gamepadbutton.html">GamepadButton</a>
+            <a href="gamepadaxis.html">GamepadAxis</a>
+        </aside>
+
+        <main class="content">
+        <h1>Keys</h1>
+        <p>use for Type Key from keyboard</p>
+
+        <h2>enum</h2>
+        <table>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+                <td>J</td>
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+                <td>N</td>
+                <td>O</td>
+                <td>F</td>
+                <td>P</td>
+                <td>Q</td>
+                <td>R</td>
+                <td>S</td>
+                <td>T</td>
+                <td>U</td>
+                <td>V</td>
+                <td>W</td>
+                <td>X</td>
+                <td>Y</td>
+                <td>Z</td>
+            </tr>
+            <tr>
+                <td>F1</td>
+                <td>F2</td>
+                <td>F3</td>
+                <td>F4</td>
+                <td>F5</td>
+                <td>F6</td>
+                <td>F7</td>
+                <td>F8</td>
+                <td>F9</td>
+                <td>F10</td>
+                <td>F11</td>
+                <td>F12</td>
+            </tr>
+            <tr>
+                <td>KP_0</td>
+                <td>KP_1</td>
+                <td>KP_2</td>
+                <td>KP_3</td>
+                <td>KP_4</td>
+                <td>KP_5</td>
+                <td>KP_6</td>
+                <td>KP_7</td>
+                <td>KP_8</td>
+                <td>KP_9</td>
+            </tr>
+            <tr>
+                <td>LEFT_SHIFT</td>
+                <td>LEFT_CONTROL</td>
+                <td>LEFT_ALT</td>
+                <td>LEFT_SUPER</td>
+                <td>SPACE</td>
+                <td>APOSTROPHE</td>
+                <td>COMMA</td>
+            </tr>
+            <tr>
+                <td>EQUAL</td>
+                <td>MENU</td>
+                <td>SEMICOLON</td>
+                <td>RIGHT_SHIFT</td>
+                <td>RIGHT_CONTROL</td>
+                <td>RIGHT_ALT</td>
+                <td>RIGHT_SUPER</td>
+            </tr>
+            <tr>
+                <td>KP_DECIMAL</td>
+                <td>KP_DIVIDE</td>
+                <td>KP_MULTIPLY</td>
+                <td>KP_SUBTRACT</td>
+                <td>KP_ADD</td>
+                <td>KP_ENTER</td>
+                <td>KP_EQUAL</td>
+            </tr>
+            <tr>
+                <td>RIGHT</td>
+                <td>LEFT</td>
+                <td>DOWN</td>
+                <td>UP</td>
+                <td>PAGE_UP</td>
+                <td>PAGE_DOWN</td>
+                <td>PERIOD</td>
+                <td>SLASH</td>
+                <td>MINUS</td>
+            </tr>
+            <tr>
+                <td>HOME</td>
+                <td>END</td>
+                <td>CAPS_LOCK</td>
+                <td>SCROLL_LOCK</td>
+                <td>NUM_LOCK</td>
+                <td>PRINT_SCREEN</td>
+                <td>PAUSE</td>
+            </tr>
+            <tr>
+                <td>WORLD_1</td>
+                <td>WORLD_2</td>
+                <td>ESCAPE</td>
+                <td>ENTER</td>
+                <td>TAB</td>
+                <td>BACKSPACE</td>
+            </tr>
+            <tr>
+                <td>LEFT_BRACKET</td>
+                <td>BACKSLASH</td>
+                <td>RIGHT_BRACKET</td>
+                <td>GRAVE_ACCENT</td>
+                <td>INSERT</td>
+                <td>DELETE</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+        <pre><code>
+--                  enum Keys
+if Inputs.GetKeyDown(Keys.W) then
+    DebugLog("Key (W) is pressed!")
+end
+        </code></pre>
+    </main>
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

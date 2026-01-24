@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - SoundSource</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html" class="active">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>SoundSource Component</h1>
+
+        <p>listener music or sound for player</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>sound</td>
+                <td>string</td>
+                <td>sound name for get file sound.mp3/wav for current sound</td>
+            </tr>
+            <tr>
+                <td>playOnStart</td>
+                <td>bool</td>
+                <td>for play sound on start</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Play()</td>
+                <td>to play current sound listener</td>
+            </tr>
+            <tr>
+                <td>Stop()</td>
+                <td>to stop or end play current sound listener</td>
+            </tr>
+            <tr>
+                <td>Pause()</td>
+                <td>puase current sound listener for sometime</td>
+            </tr>
+            <tr>
+                <td>Resume()</td>
+                <td>resume sound listener in current sound before</td>
+            </tr>
+            <tr>
+                <td>SetPitch(float pitch)</td>
+                <td>set pitch or speed listener</td>
+            </tr>
+            <tr>
+                <td>SetVolume(float volume)</td>
+                <td>range volume sound listener between 0-1</td>
+            </tr>
+            <tr>
+                <td>SetLoop(bool loop)</td>
+                <td>set looping on start play again infinite until end scene or false loop</td>
+            </tr>
+            <tr>
+                <td>GetPitch()</td>
+                <td>return pitch or speed from sound source</td>
+            </tr>
+            <tr>
+                <td>GetVolume()</td>
+                <td>return volume from sound source</td>
+            </tr>
+            <tr>
+                <td>IsLooping()</td>
+                <td>check if turn loop</td>
+            </tr>
+            <tr>
+                <td>IsPlaying()</td>
+                <td>check if playing sound source</td>
+            </tr>
+            <tr>
+                <td>IsPaused()</td>
+                <td>do it paused sound source for sometime</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new SoundSource component at . sound, playOnStart.
+local listener = entity:AddComponent(SoundSource("sound.mp3", true))
+
+-- access the SoundSource properties
+listener.sound = "music.wav"
+listener:Play()
+listener:SetVolume(0.8)
+local pitch = listener:GetPitch()
+
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>SoundSource Component</h1>
+
+        <p>تشغيل مؤثرات الصوتيه او الموسيقى</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>sound</td>
+                <td>string</td>
+                <td>اسم الصوتيه لجلب ملف sound.mp3/wav وتشغيل الصوت</td>
+            </tr>
+            <tr>
+                <td>playOnStart</td>
+                <td>bool</td>
+                <td>يقوم بتشغيل الصوتيه عند بدء المشهد</td>
+            </tr>
+        </table>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>Play()</td>
+                <td>تشغيل الصوت الحالية</td>
+            </tr>
+            <tr>
+                <td>Stop()</td>
+                <td>ايقاف الصوت الحالي بشكل نهائي</td>
+            </tr>
+            <tr>
+                <td>Pause()</td>
+                <td>ايقاف مؤقت للصوت الحالي فيما بعد</td>
+            </tr>
+            <tr>
+                <td>Resume()</td>
+                <td>عودة تشغيل الصوت الحالي كايقاف مسبق</td>
+            </tr>
+            <tr>
+                <td>SetPitch(float pitch)</td>
+                <td>تعيين سرعة الصوت</td>
+            </tr>
+            <tr>
+                <td>SetVolume(float volume)</td>
+                <td>تعيين مستوى الصوت ما بين 0 و 1</td>
+            </tr>
+            <tr>
+                <td>SetLoop(bool loop)</td>
+                <td>تعيين دوارن تشغيل الصوت بشكل لا نهاية الا عند الانتهى المشهد</td>
+            </tr>
+            <tr>
+                <td>GetPitch()</td>
+                <td>يجلب سرعة الصوت</td>
+            </tr>
+            <tr>
+                <td>GetVolume()</td>
+                <td>يجلب مستوى الصوت</td>
+            </tr>
+            <tr>
+                <td>IsLooping()</td>
+                <td>يجلب ما اذا كان التشغيل الانهاية قيد التشغيل</td>
+            </tr>
+            <tr>
+                <td>IsPlaying()</td>
+                <td>يجلب ما اذا كان الصوتيه قيج التشغيل</td>
+            </tr>
+            <tr>
+                <td>IsPaused()</td>
+                <td>يجلب ما اذا كان تم ايقاف المؤقت للصوتيه</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كان جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد SoundSource. sound, playOnStart.
+local listener = entity:AddComponent(SoundSource("sound.mp3", true))
+
+-- access the SoundSource properties
+listener.sound = "music.wav"
+listener:Play()
+listener:SetVolume(0.8)
+local pitch = listener:GetPitch()
+
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

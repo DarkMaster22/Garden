@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - TextWorld</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html" class="active">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>TextWorld Component</h1>
+
+        <p>text with out canvas free transform in world</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>font</td>
+                <td>string</td>
+                <td>font name for get font.ttf and change font style</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>string</td>
+                <td>write text to view in world</td>
+            </tr>
+            <tr>
+                <td>fontSize</td>
+                <td>int</td>
+                <td>font size in world</td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>int</td>
+                <td>set padding between words</td>
+            </tr>
+            <tr>
+                <td>wrap</td>
+                <td>int</td>
+                <td>set wrap to padding between lines</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color</td>
+                <td>color text view in world</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new TextWorld component at . font, text, fontSize, padding, wrap, color.
+local textWorld = entity:AddComponent(TextWorld("none", "Hello World!", 16, 3, 1, Color(255, 255, 0, 255)--yellow))
+
+-- access the TextWorld properties
+textWorld.text = "Hello Developer!"
+textWorld.fontSize = 24
+textWorld.color = Color(0, 0, 255, 255)--blue
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>TextWorld Component</h1>
+
+        <p>لعرض نص معين في موقع الكائن. له الحرية في اي مكان في العالم عكس نص القائمة يبقى مربوط مع الكاميرا</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>font</td>
+                <td>string</td>
+                <td>اسم font ياتي بي ملف font.ttf. لتغير شكل النص المعروض</td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>string</td>
+                <td>تعيين النص المعروض في العالم</td>
+            </tr>
+            <tr>
+                <td>fontSize</td>
+                <td>int</td>
+                <td>حجم النص</td>
+            </tr>
+            <tr>
+                <td>padding</td>
+                <td>int</td>
+                <td>تعيين مسافة ما بين الحروف</td>
+            </tr>
+            <tr>
+                <td>wrap</td>
+                <td>int</td>
+                <td>تعيين المسافة ما بين الاسطر</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color</td>
+                <td>لون النص المعروض في العالم</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد TextWorld. font, text, fontSize, padding, wrap, color.
+local textWorld = entity:AddComponent(TextWorld("none", "Hello World!", 16, 3, 1, Color(255, 255, 0, 255)--yellow))
+
+-- access the TextWorld properties
+textWorld.text = "Hello Developer!"
+textWorld.fontSize = 24
+textWorld.color = Color(0, 0, 255, 255)--blue
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

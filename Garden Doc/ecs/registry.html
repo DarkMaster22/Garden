@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Registry</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>ECS</h2>
+        <a href="entity.html">Entity</a>
+        <a href="registry.html" class="active">Registry</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Registry</h1>
+
+        <p>registry haved all entities in the world</p>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GetEntities()</td>
+                <td>get all entities haved</td>
+            </tr>
+            <tr>
+                <td>FindEntityByName(string)</td>
+                <td>every entity have name special. search in entities haved this name and return</td>
+            </tr>
+            <tr>
+                <td>FindEntitiesByGroup(string)</td>
+                <td>return entities haved this group</td>
+            </tr>
+            <tr>
+                <td>Clear()</td>
+                <td>rest from zero this registry equal empty</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+local player = Registry.FindEntityByName("Player")--entity
+
+local coins = Registry.FindEntitiesByGroup("Coins")--entities
+
+for i, entity in paris(Registry.GetEntities()) then -- loop foreach all entities per entity
+    DebugLog("entity name : ", entity:name())
+end
+
+Registry.Clear()--clear or rest
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Registry</h1>
+
+        <p>يدير جميع كائنات المشهد</p>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>GetEntities()</td>
+                <td>يجلب جميع كائنات المشهد</td>
+            </tr>
+            <tr>
+                <td>FindEntityByName(string)</td>
+                <td>يبحث عن كائن حسب اسمه</td>
+            </tr>
+            <tr>
+                <td>FindEntitiesByGroup(string)</td>
+                <td>يبحث على جميع الكائنات يحملن نفس اسم القروب</td>
+            </tr>
+            <tr>
+                <td>Clear()</td>
+                <td>يحذف جميع الكائنات المشهد او يعود من الصفر</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+local player = Registry.FindEntityByName("Player")--كائن اسمه Player
+
+local coins = Registry.FindEntitiesByGroup("Coins")--كائنات دخل قروب Coins
+
+for i, entity in paris(Registry.GetEntities()) then -- يمر على جميع الكائنات كائن كائن
+    DebugLog("entity name : ", entity:name())
+end
+
+Registry.Clear()--يحذف جميع الكائنات المشهد ليعود من نقطة الصفر
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

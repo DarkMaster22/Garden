@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Tilemap</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+    <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html" class="active">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Tilemap Component</h1>
+
+        <p>make custom map by tiles</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>texture</td>
+                <td>string</td>
+                <td>name texture or image.png/.jpg to split texture to textures for all tiles</td>
+            </tr>
+            <tr>
+                <td>layer</td>
+                <td>int</td>
+                <td>high layer up on low layer</td>
+            </tr>
+            <tr>
+                <td>collider</td>
+                <td>bool</td>
+                <td>every tile special box collider</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GetTransformBodies()</td>
+                <td>Return all transforms bodies or all box colliders for every tiles</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new Tilemap component at . texture, layer, collider.
+local tilemap = entity:AddComponent(Tilemap("tilemap.png", -1, false))
+
+-- access the Tilemap properties
+tilemap.texture = "tilemap2.png"
+local transformsBodies = tilemap:GetTransformBodies()
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Tilemap Component</h1>
+
+        <p>تصميم خريطة على مودك</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>texture</td>
+                <td>string</td>
+                <td>اسم الصورة لجلب ملف texture.png/jpg. تقسيم الصورة لمجموعة صور كل tile له صوره. ويتكون tiles</td>
+            </tr>
+            <tr>
+                <td>layer</td>
+                <td>int</td>
+                <td>الطبقة الرقم يحدد اولوية العرض</td>
+            </tr>
+            <tr>
+                <td>collider</td>
+                <td>bool</td>
+                <td>لجلعل الخريطة collider للتصادم. يبني لكل tile box collider خاص</td>
+            </tr>
+        </table>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>GetTransformBodies()</td>
+                <td>يجلب كل transforms للاجسام</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد Tilemap. texture, layer, collider.
+local tilemap = entity:AddComponent(Tilemap("tilemap.png", -1, false))
+
+-- access the Tilemap properties
+tilemap.texture = "tilemap2.png"
+local transformsBodies = tilemap:GetTransformBodies()
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

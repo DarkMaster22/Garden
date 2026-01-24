@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - Inputs</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+    
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <a href="../doc.html">About</a>
+            <h2>Inputs</h2>
+            <a href="inputs.html" class="active">Inputs</a>
+            <a href="keys.html">Keys</a>
+            <a href="mousebutton.html">MouseButton</a>
+            <a href="gamepadbutton.html">GamepadButton</a>
+            <a href="gamepadaxis.html">GamepadAxis</a>
+        </aside>
+
+        <main id="contentEN" class="content" style="display: none;">
+        <h1>Inputs</h1>
+        <p>Input keyboard and mouse and Control Gamepad to events</p>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>GetKeyDown(Keys key)</td>
+                <td>check key if pressed</td>
+            </tr>
+            <tr>
+                <td>GetKeyUp(Keys key)</td>
+                <td>check key if up press</td>
+            </tr>
+            <tr>
+                <td>GetMouseButtonDown(MouseButton button)</td>
+                <td>check mouse if pressed the button</td>
+            </tr>
+            <tr>
+                <td>GetMouseButtonUp(MouseButton button)</td>
+                <td>check mouse if up press the button</td>
+            </tr>
+            <tr>
+                <td>GetGamepadButtonDown(GamepadButton button)</td>
+                <td>check gamepad if up press the button</td>
+            </tr>
+            <tr>
+                <td>GetMousePosition()</td>
+                <td>return value Vec2 mouse position in screen</td>
+            </tr>
+            <tr>
+                <td>GetMouseScroller()</td>
+                <td>return Vec2 value mouse scroller</td>
+            </tr>
+            <tr>
+                <td>GetGamepadName(int id)</td>
+                <td>return string gamepad name</td>
+            </tr>
+            <tr>
+                <td>GetGamepadAxis(int id, GamepadAxis axis)</td>
+                <td>return gamepad axis float value between from -1 to 1</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+        <pre><code>
+if Inputs.GetKeyDown(Keys.W) then
+    DebugLog("Key (W) is pressed!")
+end
+
+local mousePosition = Inputs.GetMousePosition()
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display: block;">
+        <h1>Inputs</h1>
+        <p>ادارة الادخال للتحكم مثل لوحة المفاتيح والماوس او يد كنترولر</p>
+
+        <h2>الدوأل</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>GetKeyDown(Keys key)</td>
+                <td>اذا ضغط زر معين في لوحة المفاتيح</td>
+            </tr>
+            <tr>
+                <td>GetKeyUp(Keys key)</td>
+                <td>اذا لا يتم الضغط زر معين في لوحة المفاتيح</td>
+            </tr>
+            <tr>
+                <td>GetMouseButtonDown(MouseButton button)</td>
+                <td>اذا ما تم ضغط زر معين في الماوس او الفاره</td>
+            </tr>
+            <tr>
+                <td>GetMouseButtonUp(MouseButton button)</td>
+                <td>اذا لا يتم ضغط الزر معين في الماوس او الفاره</td>
+            </tr>
+            <tr>
+                <td>GetGamepadButtonDown(GamepadButton button)</td>
+                <td>اذا ما تم ضغط زر في يد الكنترولر</td>
+            </tr>
+            <tr>
+                <td>GetMousePosition()</td>
+                <td>يجلب قيمة من نوع Vec2 وهي موقع الماوس او الفاره في الشاشة</td>
+            </tr>
+            <tr>
+                <td>GetMouseScroller()</td>
+                <td>يجلب قيمة من نوع Vec2 لي اتجاه العجل المجود في الماوس او الفاره</td>
+            </tr>
+            <tr>
+                <td>GetGamepadName(int id)</td>
+                <td>يجلب اسم يد الكنترولر من id</td>
+            </tr>
+            <tr>
+                <td>GetGamepadAxis(int id, GamepadAxis axis)</td>
+                <td>يعيد قيمة ما بين -1 الى 1 من القير الموجود في يد الكنترولر يحمل id</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+        <pre><code>
+if Inputs.GetKeyDown(Keys.W) then
+    DebugLog("Key (W) is pressed!")
+end
+
+local mousePosition = Inputs.GetMousePosition()
+        </code></pre>
+    </main>
+
+    </div>
+    
+    <script src="../script.js"></script>
+</body>
+</html>

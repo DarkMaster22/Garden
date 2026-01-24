@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Vec2</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Math</h2>
+        <a href="vec2.html" class="active">Vec2</a>
+        <a href="vec3.html">Vec3</a>
+        <a href="vec4.html">Vec4</a>
+        <a href="math.html">Math</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Vec2</h1>
+
+        <p>Vec2 have 2 bat type float x and y for make point in space have length and direction</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>float</td>
+                <td>every plus go right and every sub go left</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>float</td>
+                <td>every plus go down and every sub go up</td>
+            </tr>
+        </table>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>length()</td>
+                <td>return direction length</td>
+            </tr>
+            <tr>
+                <td>lengthSq()</td>
+                <td>return sqrt direction length</td>
+            </tr>
+            <tr>
+                <td>dot(Vec2)</td>
+                <td>return float a.b</td>
+            </tr>
+            <tr>
+                <td>Normalize()</td>
+                <td>return Vec2 Normalized</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+local a = Vec2(50, 30)
+local b = Vec2(32, 16)
+
+a:Normalize()
+
+local dot = a:dot(b)
+
+local distance = a - b
+local length = distance:length()
+
+local between = b * 4
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Vec2</h1>
+
+        <p>المتجه هو عباره عن نقطة في الفضاء له x-y يعبرعن موقعة ولكن له طول واتجاه</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>x</td>
+                <td>float</td>
+                <td>كل ما زاد بشكل موجب ذهب يمين اكثر وكل ما اصبح اقل من الصفر واصبح سلبي اكثر ذهب لليسار (-x____________0___________x+)</td>
+            </tr>
+            <tr>
+                <td>y</td>
+                <td>float</td>
+                <td>كل ما زاد بشكل موجب ذهب للاسفل وكل ما اصبح اقل من الصفر واصبح اقل سلبي ذهب للاعلى</td>
+            </tr>
+        </table>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>length()</td>
+                <td>يعيد قيمه طول اتجاه المتجه</td>
+            </tr>
+            <tr>
+                <td>lengthSq()</td>
+                <td>يعيد قيمة جذر التكعيبي لطول اتجاه المتجه</td>
+            </tr>
+            <tr>
+                <td>dot(Vec2)</td>
+                <td>يعيد قيمة اسقاط متجه اخر على المتجه</td>
+            </tr>
+            <tr>
+                <td>Normalize()</td>
+                <td>يعيد قيمة الاتجاه ناعم ما بين الصفر والواحد 0-1</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+local a = Vec2(50, 30)
+local b = Vec2(32, 16)
+
+a:Normalize()
+
+local dot = a:dot(b)
+
+local distance = a - b
+local length = distance:length()
+
+local between = b * 4-- يتيح ضرب اتجاهين بي بعضم البعض وضرب اتجاه برقم
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

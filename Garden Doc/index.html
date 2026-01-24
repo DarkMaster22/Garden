@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine - home</title>
+    <style>
+        body
+        {
+            padding: 50px;
+            text-align: center;
+        justify-content: center;
+        align-items: center;
+        }
+
+        .engine_logo{
+            width: 256px;
+            height: 256px;
+        }
+        h1{
+            font-size: 48px;
+        }
+        h3
+        {
+            font-size: 24px;
+            color: rgb(161, 161, 161);
+        }
+
+        .img-btn {
+            background-color: rgb(219, 219, 219);
+            border: none;
+            padding: 8px;
+            cursor: pointer;
+            border-radius: 8px;
+
+            margin-left: 64px;
+        }
+        .img-btn:hover {
+            background-color: rgb(158, 158, 158);
+        }
+
+        .img-btn img {
+            width: 64px;
+            height: 64px;
+        }
+
+        .logo
+        {
+            width: 64px;
+            height: 64px;
+
+            display: flex;
+        }
+
+        .contenter
+        {
+            display: flex;
+            gap: 20px;
+            padding: 5px;
+            border: 1px solid black;
+            margin: 0 auto;
+            background: #0a0a0a;
+            border-radius: 20px;
+        }
+
+        img
+        {
+            padding: 16px;
+            height: 360px;
+            border-radius: 20px;
+        }
+
+        .contenter .text
+        {
+            margin: auto;
+        }
+
+        .bug-form {
+        background-color: #0a0a0a;
+        gap: 20px;
+        padding: 40px 50px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    .bug-form h2 {
+        color: #ececec;
+        margin-bottom: 30px;
+        font-size: 28px;
+    }
+
+    .bug-form h2::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: #f1aa3f;
+        margin: 10px auto 0 auto;
+        border-radius: 2px;
+    }
+
+    .bug-form input,
+    .bug-form textarea {
+        width: 50%;
+        padding: 12px 15px;
+        margin-bottom: 20px;
+        border: 1px solid #8d8d8d;
+        border-radius: 10px;
+        font-size: 16px;
+        outline: none;
+        transition: all 0.3s ease;
+    }
+
+    .bug-form input:focus,
+    .bug-form textarea:focus {
+        border-color: #eb9b32;
+        box-shadow: 0 0 5px rgba(212, 109, 25, 0.5);
+    }
+
+    .bug-form textarea {
+        resize: none;
+        min-height: 150px;
+    }
+
+    .bug-form button {
+        width: 50%;
+        padding: 12px;
+        background-color: #919191;
+        border: none;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .bug-form button:hover {
+        background-color: #f0ad32;
+    }
+        
+
+    </style>
+
+    <link rel="icon" href="herb fill.png" type="image/png">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "zdE-sOrAkypIiOCPg",
+      });
+   })();
+
+   function SendMsgToEmail()
+{
+    let name = document.getElementById("name");
+    let message = document.getElementById("message");
+
+    if (name.value == "" || message.value == "")
+    {
+        alert("name or message is empty");
+        return;
+    }
+
+    emailjs.send("service_r48bgib","template_8ls5s27",{
+subject: "Garden engine Bug",
+name: name.value,
+message: message.value
+});
+
+name.value = "";
+message.value = "";
+}
+</script>
+</head>
+<body>
+    <header class="topbar">
+        <button onclick="ReportBugs()">ReportBugs</button>
+        <button onclick="Doc()">Documentation</button>
+        <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    <img class="logo" src="DarkMaster Logo.png">
+    
+    <img class="engine_logo" src="herb fill.png">
+    <h1>Garden Engine</h1>
+
+    <p>Download Now Garden Alpha 1.0.1</p>
+    <br>
+    
+    <button class="img-btn" onclick="Windows10()">
+        <img src="windows-10-icon.png" alt="button">
+    </button>
+    <button class="img-btn" onclick="Linux()">
+        <img src="linux.png" alt="button">
+    </button>
+    
+    <br><br><br><br>
+    
+    <div class="contenter">
+        <iframe class="video" width="800" height="600" src="https://www.youtube.com/embed/HunrqLjC6Vk?si=PdWqubUlrfgvkYJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="text">
+            <h2>traillar</h2>
+        </div>
+    </div>
+
+<main id="contentAR" class="content" style="display: none;">
+
+    <div class="contenter">
+        <img src="New Project.png" alt="Image">
+        <div class="text">
+            <h2>انشاء مشروع جديد</h2>
+            <p>طور اول لعبة لك مع ادوات مساعده</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Editor.png" alt="Image">
+        <div class="text">
+            <h2>المحرر</h2>
+            <p>محرر بسيط وسهل الاستخدام لمساعدة في بناء العبة مع بعض الادوات</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Hierarchy.png" alt="Image">
+        <div class="text">
+            <h2>Hierarchy</h2>
+            <p>يجمع كل كائنات المشهد يمكن انشاء كائن وتعديل واختيار</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Inspector.png" alt="Image">
+        <div class="text">
+            <h2>Inspector</h2>
+            <p>يعرض جميع مكونات الكائن المحدد يمكن تعديل واضافة مكون جديد</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Scene.png" alt="Image">
+        <div class="text">
+            <h2>Viewport</h2>
+            <p>هنا يعرض عالم الفضاء ترا كائنات المشهد ويمكن بداء زر التشغيل وتجربت لعب عالم المشهد الحالي</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Contents Browser.png" alt="Image">
+        <div class="text">
+            <h2>Contents Browser</h2>
+            <p>مستكشف المحتويات يوصلك الى الاوصول او ملفات المشروع ويتح التحكم بلاوصول</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Animation.png" alt="Image">
+        <div class="text">
+            <h2>Animations</h2>
+            <p>تعديل حركات الكائن من عدة صور يعرض اطار ورا اطار باجزاء من الثانيه</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Tileset.png" alt="Image">
+        <div class="text">
+            <h2>Tileset</h2>
+            <p>تعديل الصور لتكون بلاطات واختيار لنشاء خريطة من بلاطات</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Package.png" alt="Image">
+        <div class="text">
+            <h2>Package</h2>
+            <p>اعدادات بناء العبة خراجي بشكل مستقل للاعبين</p>
+        </div>
+    </div>
+    <br><br>
+
+</main>
+
+<main id="contentEN" class="content" style="display: none;">
+
+    <div class="contenter">
+        <img src="New Project.png" alt="Image">
+        <div class="text">
+            <h2>New Project</h2>
+            <p>create new Project and start dev you first game</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Editor.png" alt="Image">
+        <div class="text">
+            <h2>Editor</h2>
+            <p>editing the game every easy and have good tools</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Hierarchy.png" alt="Image">
+        <div class="text">
+            <h2>Hierarchy</h2>
+            <p>connection Registry to view all entities and create new entity and Editing</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Inspector.png" alt="Image">
+        <div class="text">
+            <h2>Inspector</h2>
+            <p>view all components from selected entity and add new component and editing</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Scene.png" alt="Image">
+        <div class="text">
+            <h2>Viewport</h2>
+            <p>controller in space world to edit current scene and view all entities haved renderer and editing and can start play scene for test the game</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Contents Browser.png" alt="Image">
+        <div class="text">
+            <h2>Contents Browser</h2>
+            <p>view contents from project assets make folder or asset and editing</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Animation.png" alt="Image">
+        <div class="text">
+            <h2>Animations</h2>
+            <p>edit in list animations from selected entity haved Spritesheet make new animation from texture splited to textures and view frame by frame by time</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Tileset.png" alt="Image">
+        <div class="text">
+            <h2>Tileset</h2>
+            <p>make new tiles from texture splited to textures and select tile for build tilemap</p>
+        </div>
+    </div>
+    <br><br>
+    <div class="contenter">
+        <img src="Package.png" alt="Image">
+        <div class="text">
+            <h2>Package</h2>
+            <p>change options to build the game in out side for play players</p>
+        </div>
+    </div>
+    <br><br>
+
+</main>
+
+    <div class="bug-form">
+        <h2>ابلغ عن مشكلة</h2>
+        <input type="text" id="name" name="name" placeholder="اسمك">
+        <textarea id="message" name="message" placeholder="رسالتك"></textarea>
+        <button onclick="SendMsgToEmail()">إرسال</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

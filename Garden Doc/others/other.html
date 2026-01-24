@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Other</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Other</h2>
+        <a href="physics.html">Physics</a>
+        <a href="other.html" class="active">Other</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Other</h1>
+
+        <p>Other scripting system need in lua</p>
+
+        <h2>Functions</h2>
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>DeltaTime()</td>
+                <td>return value float ms time per frame</td>
+            </tr>
+            <tr>
+                <td>LoadScene(string)</td>
+                <td>to switch other scene by name</td>
+            </tr>
+            <tr>
+                <td>ScreenCoordsToWolrd(Vec2)</td>
+                <td>calculate Vec2 from Screen coords to World coords for activate in world not just in screen</td>
+            </tr>
+            <tr>
+                <td>WorldCoordsToScreen(Vec2)</td>
+                <td>calculate Vec2 from World coords to Screen coords for activate in screen not just in world</td>
+            </tr>
+            <tr>
+                <td>LoadScript(string)</td>
+                <td>to get script file.lua and read by name</td>
+            </tr>
+            <tr>
+                <td>DebugLog(Args)</td>
+                <td>send massage to consale logger if need something</td>
+            </tr>
+            <tr>
+                <td>DebugWarn(Args)</td>
+                <td>send massage ALert to consale logger if need edit thing</td>
+            </tr>
+            <tr>
+                <td>DebugError(Args)</td>
+                <td>send msg Error to consale logger</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+LoadScript("Player.lua")
+LoadScene("Level 1.gge")
+local framerate = 1 / DeltaTime()
+DebugLog("fps : ", framerate)
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>اخرى</h1>
+
+        <p>اوامر برمجة اخرى عامه تحتاجه لتكمن العبة</p>
+
+        <h2>الدوال</h2>
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>DeltaTime()</td>
+                <td>جلب وقت الذي يمر كل اطار اجزاء من الثانيه</td>
+            </tr>
+            <tr>
+                <td>LoadScene(string)</td>
+                <td>انتقال الى مشهد اخر من اسمه</td>
+            </tr>
+            <tr>
+                <td>ScreenCoordsToWolrd(Vec2)</td>
+                <td>تحويل المتجه من الشاشة الى عالم العبة</td>
+            </tr>
+            <tr>
+                <td>WorldCoordsToScreen(Vec2)</td>
+                <td>تحويل المتجه من عالم العبة الى الشاشة</td>
+            </tr>
+            <tr>
+                <td>LoadScript(string)</td>
+                <td>لقراة ملف script.lua</td>
+            </tr>
+            <tr>
+                <td>DebugLog(string)</td>
+                <td>بعث رسالة الى المحرك</td>
+            </tr>
+            <tr>
+                <td>DebugWarn(string)</td>
+                <td>بعث رسالة تحذيريه الى المحرك </td>
+            </tr>
+            <tr>
+                <td>DebugError(string)</td>
+                <td>بعث رسالة هناك خطاء في الكود للتحقق منه</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+        
+        <pre><code>
+LoadScript("Player.lua")
+LoadScene("Level 1.gge")
+local framerate = 1 / DeltaTime()
+DebugLog("fps : ", framerate)
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

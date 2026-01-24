@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - ButtonUI</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Components</h2>
+        <a href="transform.html">Transform</a>
+        <a href="sprite.html">Sprite</a>
+        <a href="spritesheet.html">Spritesheet</a>
+        <a href="BoxCollider.html">BoxCollider</a>
+        <a href="CircleCollider.html">CircleCollider</a>
+        <a href="Rigidbody.html">Rigidbody</a>
+        <a href="TextWorld.html">TextWorld</a>
+        <a href="CameraComponent.html">CameraComponent</a>
+        <a href="SoundSource.html">SoundSource</a>
+        <a href="Tilemap.html">Tilemap</a>
+        <a href="TextUI.html">TextUI</a>
+        <a href="ImageUI.html">ImageUI</a>
+        <a href="ButtonUI.html" class="active">ButtonUI</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>ButtonUI Component</h1>
+
+        <p>button haved event if Clicked get function onclick for user interface</p>
+
+        <h2>Properties</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color</td>
+                <td>normal color button</td>
+            </tr>
+            <tr>
+                <td>color_hoverd</td>
+                <td>Color</td>
+                <td>if mouse up button to change hoverd color</td>
+            </tr>
+            <tr>
+                <td>color_disabled</td>
+                <td>Color</td>
+                <td>when end pressed button change disabled color</td>
+            </tr>
+            <tr>
+                <td>OnClick</td>
+                <td>function</td>
+                <td>On Pressed Button get event from function</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+-- Create a new entity
+local entity = Entity("name", "group")
+
+-- Add a new ButtonUI component at color, color_hoverd, color_disabled. 
+local button = entity:AddComponent(ButtonUI(Color(255, 255, 255, 255), Color(255, 255, 0, 255), Color(255, 0, 0, 255)))
+
+-- access the ButtonUI properties
+button.color = Color(128, 128, 128, 255)--Gray
+button.OnClick = function()
+    DebugLog("button is clicked!")
+end
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display: block;">
+        <h1>ButtonUI Component</h1>
+
+        <p>ازرار لتسهيل استخدام واجهة المستخدم عند ضغط الزر يستدعي الدالة OnClick</p>
+
+        <h2>المتغيرات</h2>
+        <table>
+            <tr>
+                <th>اسم المتغير</th>
+                <th>النوع</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>Color</td>
+                <td>الون المعتاد للزر</td>
+            </tr>
+            <tr>
+                <td>color_hoverd</td>
+                <td>Color</td>
+                <td>الماوس فوق الزر يغير الى هذا الون</td>
+            </tr>
+            <tr>
+                <td>color_disabled</td>
+                <td>Color</td>
+                <td>يتغير الون لحضة ضغط الزر</td>
+            </tr>
+            <tr>
+                <td>OnClick</td>
+                <td>function</td>
+                <td>عند ضغط الزر يستدعي الدالة</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+-- انشاء كائن جديد
+local entity = Entity("name", "group")
+
+-- اضافة مكون جديد ButtonUI. color, color_hoverd, color_disabled. 
+local button = entity:AddComponent(ButtonUI(Color(255, 255, 255, 255), Color(255, 255, 0, 255), Color(255, 0, 0, 255)))
+
+-- access the ButtonUI properties
+button.color = Color(128, 128, 128, 255)--Gray
+button.OnClick = function()
+    DebugLog("button is clicked!")
+end
+        </code></pre>
+    </main>
+
+</div>
+    
+
+<script src="../script.js"></script>
+</body>
+</html>
