@@ -10,15 +10,15 @@ function SwitchLung()
 }
 function GoHome()
 {
-    window.location.href = "Garden/index.html"
+    window.location.href = "index.html"
 }
 function Doc()
 {
-    window.location.href = "Garden/doc.html"
+    window.location.href = "doc.html"
 }
 function ReportBugs()
 {
-    window.location.href = "Garden/index.html#Report"
+    window.location.href = "index.html#Report"
 }
 function language(ar)
 {
@@ -57,3 +57,4 @@ function Windows10()
             alert("قريبا سيتوفر على نضام linux")
 
         }
+
