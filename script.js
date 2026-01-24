@@ -43,18 +43,18 @@ function language(ar)
 
 function Windows10()
         {
-            alert("انتضر لحظه.. يتم رفع الملف")
-            // const url = ""; // رابط الملف
-            // const a = document.createElement("a");
-            // a.href = url;
-            // a.download = "";
-            // document.body.appendChild(a);
-            // a.click();
-            // document.body.removeChild(a);
+            const url = "https://drive.google.com/uc?export=download&id=1ECnr3aQeHJr8rpbkEvFyCb9XvSl56tTN";
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         }
         function Linux()
         {
             alert("قريبا سيتوفر على نضام linux")
 
         }
+
 
