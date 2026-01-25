@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://darkmaster22.github.io/Garden/sitemap.xml
