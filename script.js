@@ -12,6 +12,10 @@ function GoHome()
 {
     window.location.href = "index.html"
 }
+function Donation()
+{
+    window.location.href = "https://paypal.me/HamzehXL"
+}
 function Doc()
 {
     window.location.href = "doc.html"
@@ -56,5 +60,6 @@ function Windows10()
             alert("قريبا سيتوفر على نضام linux")
 
         }
+
 
 
