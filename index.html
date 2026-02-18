@@ -41,14 +41,14 @@
         }
 
         .img-btn {
-            background-color: rgb(219, 219, 219);
-            border: none;
-            padding: 8px;
-            cursor: pointer;
-            border-radius: 8px;
+    background-color: rgb(219, 219, 219);
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 64px;
+}
 
-            margin-left: 64px;
-        }
         .img-btn:hover {
             background-color: rgb(158, 158, 158);
         }
@@ -77,12 +77,12 @@
             border-radius: 20px;
         }
 
-        img
-        {
-            padding: 16px;
-            height: 360px;
-            border-radius: 20px;
-        }
+        img {
+    padding: 16px;
+    height: 360px;
+    border-radius: 20px;
+}
+
 
         .contenter .text
         {
@@ -153,50 +153,15 @@
     .bug-form button:hover {
         background-color: #f0ad32;
     }
-        
-
     </style>
 
     <link rel="icon" href="herb fill.png" type="image/png">
 
     <link rel="stylesheet" href="styles.css">
-
-    <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "zdE-sOrAkypIiOCPg",
-      });
-   })();
-
-   function SendMsgToEmail()
-{
-    let name = document.getElementById("name");
-    let message = document.getElementById("message");
-
-    if (name.value == "" || message.value == "")
-    {
-        alert("name or message is empty");
-        return;
-    }
-
-    emailjs.send("service_r48bgib","template_8ls5s27",{
-subject: "Garden engine Bug",
-name: name.value,
-message: message.value
-});
-
-name.value = "";
-message.value = "";
-}
-</script>
 </head>
 <body>
     <header class="topbar">
         <button onclick="Donation()">Donation</button>
-        <button onclick="ReportBugs()">ReportBugs</button>
         <button onclick="Doc()">Documentation</button>
         <button id="langBtn" onclick="SwitchLung()">AR</button>
     </header>
@@ -204,27 +169,26 @@ message.value = "";
     
     <img class="engine_logo" src="herb fill.png">
     <h1>Garden Engine</h1>
+    
+    <br><br>
 
-    <p>Download Now Garden Alpha 1.0.1</p>
-    <br>
-    
-    <button class="img-btn" onclick="Windows10()">
+    <!-- <button class="img-btn" onclick="Windows10()">
         <img src="windows-10-icon.png" alt="button">
+    </button> -->
+    <button class="img-btn" onclick="SourceCode()">
+        <img src="github-icon.png" alt="button">
     </button>
-    <button class="img-btn" onclick="Linux()">
-        <img src="linux.png" alt="button">
-    </button>
-    
-    <br><br><br><br>
-    
+
+<main id="contentAR" class="content" style="display: none;">
+
+    <h2>لقد توقفت عن العمل على المحرك يمكنك الان تنزيل مشروع المحرك من github, Garden Engine Release Source Code</h2>
+
     <div class="contenter">
         <iframe class="video" width="800" height="600" src="https://www.youtube.com/embed/HunrqLjC6Vk?si=PdWqubUlrfgvkYJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <div class="text">
             <h2>traillar</h2>
         </div>
     </div>
-
-<main id="contentAR" class="content" style="display: none;">
 
     <div class="contenter">
         <img src="New Project.png" alt="Image">
@@ -303,6 +267,15 @@ message.value = "";
 
 <main id="contentEN" class="content" style="display: none;">
 
+    <h2>i have stoped work in Garden Engine, can you download Garden Engine Release Source Code from Github</h2>
+
+    <div class="contenter">
+        <iframe class="video" width="800" height="600" src="https://www.youtube.com/embed/HunrqLjC6Vk?si=PdWqubUlrfgvkYJH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <div class="text">
+            <h2>traillar</h2>
+        </div>
+    </div>
+
     <div class="contenter">
         <img src="New Project.png" alt="Image">
         <div class="text">
@@ -377,13 +350,6 @@ message.value = "";
     <br><br>
 
 </main>
-
-    <div class="bug-form">
-        <h2>ابلغ عن مشكلة</h2>
-        <input type="text" id="name" name="name" placeholder="اسمك">
-        <textarea id="message" name="message" placeholder="رسالتك"></textarea>
-        <button onclick="SendMsgToEmail()">إرسال</button>
-    </div>
     
     <script src="script.js"></script>
 </body>

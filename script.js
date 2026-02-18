@@ -10,7 +10,7 @@ function SwitchLung()
 }
 function GoHome()
 {
-    window.location.href = "index.html"
+    window.location.href = "../index.html"
 }
 function Donation()
 {
@@ -45,20 +45,19 @@ function language(ar)
 
 //download
 
-function Windows10()
+// function Windows10()
+//         {
+//             const url = "https://drive.google.com/uc?export=download&id=1ECnr3aQeHJr8rpbkEvFyCb9XvSl56tTN";
+//             const a = document.createElement("a");
+//             a.href = url;
+//             a.download = "";
+//             document.body.appendChild(a);
+//             a.click();
+//             document.body.removeChild(a);
+//         }
+        function SourceCode()
         {
-            const url = "https://drive.google.com/uc?export=download&id=1ECnr3aQeHJr8rpbkEvFyCb9XvSl56tTN";
-            const a = document.createElement("a");
-            a.href = url;
-            a.download = "";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
-        function Linux()
-        {
-            alert("قريبا سيتوفر على نضام linux")
-
+            window.location.href = "https://github.com/LORDOFDARK22/Garden-Engine-Release-Source-Code"
         }
 
 

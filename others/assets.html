@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garden Engine Doc - Assets</title>
+
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../herb fill.png" type="image/png">
+</head>
+<body>
+
+    <header class="topbar">
+        <button id="home" onclick="GoHome()">Home</button>
+    <button id="langBtn" onclick="SwitchLung()">AR</button>
+    </header>
+    
+    <div class="container">
+
+    <aside class="sidebar">
+        <a href="../doc.html">About</a>
+        <h2>Other</h2>
+        <a href="physics.html">Physics</a>
+        <a href="assets.html" class="active">Assets</a>
+        <a href="other.html">Other</a>
+    </aside>
+
+    <main id="contentEN" class="content" style="display: none;">
+        <h1>Assets</h1>
+
+        <p>add any asset in resources</p>
+
+        <h2>Functions</h2>
+        
+        <table>
+            <tr>
+                <th>Function</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>addTexture(string textureName, string filepath)</td>
+                <td>add asset from type Texture by name, read file types .png/.jpg, to use render in world</td>
+            </tr>
+            <tr>
+                <td>addSound(string soundName, string filepath)</td>
+                <td>add asset from type Sound by name, read file types .mp3/.wav, to use soundsource</td>
+            </tr>
+            <tr>
+                <td>addFont(string fontName, string filepath)</td>
+                <td>add asset from type Font by name, read file type .ttf, to render text from font type in world</td>
+            </tr>
+        </table>
+
+        <h2>Example</h2>
+
+        <pre><code>
+--add texture
+Assets.addTexture("playerTex", "Assets/textures/player.png")
+--add sound
+Assets.addSound("coinSfx", "Assets/sounds/take coin.wav")
+--add font
+Assets.addFont("font", "Assets/fonts/arial.ttf")
+        </code></pre>
+    </main>
+
+    <main id="contentAR" class="content" style="display:block;">
+        <h1>Assets</h1>
+
+        <p>اضف عنصر في مجمع العناصر لاستخدامها لاحقا</p>
+
+        <h2>الدوال</h2>
+        
+        <table>
+            <tr>
+                <th>الدالة</th>
+                <th>الوصف</th>
+            </tr>
+            <tr>
+                <td>addTexture(string textureName, string filepath)</td>
+                <td>اضافة عنصر من نوع صورة واسم العنصر وموقع الملف من نوع .png/.jpg</td>
+            </tr>
+            <tr>
+                <td>addSound(string soundName, string filepath)</td>
+                <td>اضافة عنصر من نوع صوتيه واسم العنصر وموقع الملف من نوع .mp3/.wav</td>
+            </tr>
+            <tr>
+                <td>addFont(string fontName, string filepath)</td>
+                <td>اضافة عنصر من نوع الخط واسم العنصر وموقع الملف من نوع .ttf</td>
+            </tr>
+        </table>
+
+        <h2>مثال</h2>
+
+        <pre><code>
+--اضافة صورة
+Assets.addTexture("playerTex", "Assets/textures/player.png")
+--اضافة صوتيه
+Assets.addSound("coinSfx", "Assets/sounds/take coin.wav")
+--اضافة خط
+Assets.addFont("font", "Assets/fonts/arial.ttf")
+        </code></pre>
+        </code></pre>
+    </main>
+
+</div>
+    
+<script src="../script.js"></script>
+</body>
+</html>

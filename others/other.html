@@ -21,6 +21,7 @@
         <a href="../doc.html">About</a>
         <h2>Other</h2>
         <a href="physics.html">Physics</a>
+        <a href="assets.html">Assets</a>
         <a href="other.html" class="active">Other</a>
     </aside>
 
@@ -67,6 +68,14 @@
                 <td>DebugError(Args)</td>
                 <td>send msg Error to consale logger</td>
             </tr>
+            <tr>
+                <td>DrawCircle(Vec2 pos, float radius, bool line, Color color)</td>
+                <td>Draw circle shape in gizmo renderer for test just in editor</td>
+            </tr>
+            <tr>
+                <td>DrawLine(Vec2 start, Vec2 end, Color color)</td>
+                <td>Draw line from start to end point in gizmo renderer for test just in editor</td>
+            </tr>
         </table>
 
         <h2>Example</h2>
@@ -76,6 +85,14 @@ LoadScript("Player.lua")
 LoadScene("Level 1.gge")
 local framerate = 1 / DeltaTime()
 DebugLog("fps : ", framerate)
+
+--in main.lua
+render = function()
+    --draw circle shape, position, radius, line, color
+    DrawCircle(Vec2(50, 50), 16, false, Color(255,0,0,255))
+    --draw line, start point, end point, color
+    DrawLine(Vec2(0, 0), Vec2(100, 50), Color(0,255,0,255))
+end
         </code></pre>
     </main>
 
@@ -122,6 +139,14 @@ DebugLog("fps : ", framerate)
                 <td>DebugError(string)</td>
                 <td>بعث رسالة هناك خطاء في الكود للتحقق منه</td>
             </tr>
+            <tr>
+                <td>DrawCircle(Vec2 pos, float radius, bool line, Color color)</td>
+                <td>لرسم شكل دائرة فقد في المحرر لي اختبار معين</td>
+            </tr>
+            <tr>
+                <td>DrawLine(Vec2 start, Vec2 end, Color color)</td>
+                <td>رسم خط يبداء من نقطه الى ينتهي في نقطه لهدف الاختبار فقد في المحرر</td>
+            </tr>
         </table>
 
         <h2>مثال</h2>
@@ -131,6 +156,14 @@ LoadScript("Player.lua")
 LoadScene("Level 1.gge")
 local framerate = 1 / DeltaTime()
 DebugLog("fps : ", framerate)
+
+--في main.lua
+render = function()
+    --رسم شكل الدائرة, position, radius, line, color
+    DrawCircle(Vec2(50, 50), 16, false, Color(255,0,0,255))
+    --رسم الخط, start point, end point, color
+    DrawLine(Vec2(0, 0), Vec2(100, 50), Color(0,255,0,255))
+end
         </code></pre>
     </main>
 
