@@ -57,7 +57,13 @@ function language(ar)
 //         }
         function SourceCode()
         {
-            window.location.href = "https://github.com/LORDOFDARK22/Garden-Engine-Release-Source-Code"
+            const url = "https://drive.google.com/uc?export=download&id=1Gt8-DAbYo89_9P3O4GiPlDHVt3DUh-Um";
+            const a = document.createElement("a");
+             a.href = url;
+             a.download = "";
+            document.body.appendChild(a);
+             a.click();
+             document.body.removeChild(a);
         }
 
 
